@@ -19,13 +19,29 @@
 			color: white;
 			margin-left: 30vw;
 		}
+		.modalcloser{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			z-index: -1;
+			height: 1200px;
+			width: 100%;
+		}
+		body{
+			display: inline-block;
+		}
 	</style>
 
 </head>
+<body>
+
 	<button onclick="document.getElementById('newevent').style.display='block'" class="w3-btn eventbutton">Add a new event
 	</button>
-	<br/>
-	<br/>
+	<div id='modalcloser' class='modalcloser'>
+		<br/>
+		<br/>
+	</div>
+
 	<form id='newevent' class='w3-modal-content w3-card-4 w3-animate-zoom newevent'>
 		<p>Add a new event form:</p>
 		 <span onclick="document.getElementById('newevent').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
@@ -51,7 +67,12 @@ $(document).ready(function(){
 		console.log(e.target.date.value);
 		console.log(e.target.time.value);
 		console.log(e.target.description.value);
-	})
+
+	});
+
+	document.getElementById('modalcloser').addEventListener('click',function(){
+		document.getElementById('newevent').style.display = 'none';
+	});
 
 })
 
