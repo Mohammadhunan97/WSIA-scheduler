@@ -1,3 +1,7 @@
+<?php 
+include 'models/db.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
